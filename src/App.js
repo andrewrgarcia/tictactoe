@@ -22,9 +22,9 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = "🐱";
+      nextSquares[i] = <span role="img" aria-label="cat">🐱</span> ;
     } else {
-      nextSquares[i] = "🐶";
+      nextSquares[i] = <span role="img" aria-label="dog">🐶</span>;
     }
     onPlay(nextSquares);
   }
@@ -35,13 +35,13 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "🐱" : "🐶");
+    status = "Next player: " + (xIsNext ? "cat" : "dog");
   }
 
 
   return (
     <React.Fragment>
-      <div className="status">Tic-🐱-🐶*</div>
+      <div className="status">Tic-Tac-<span role="img" aria-label="dog">🐶</span>*</div>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
