@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
+
+
 function Square({ value, onSquareClick }) {
     return (
       <button className="square" onClick={onSquareClick}>
@@ -20,24 +22,26 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = "X";
+      nextSquares[i] = "🐱";
     } else {
-      nextSquares[i] = "O";
+      nextSquares[i] = "🐶";
     }
     onPlay(nextSquares);
   }
 
   const winner = calculateWinner(squares);
   let status;
+
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "Next player: " + (xIsNext ? "🐱" : "🐶");
   }
 
 
   return (
     <React.Fragment>
+      <div className="status">Tic-🐱-🐶*</div>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -54,6 +58,9 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
+      <div className="footer">*Adapted by <a href="https://github.com/andrewrgarcia">Andrew Garcia </a> 
+       from <a href="https://react.dev/learn/tutorial-tic-tac-toe">React Tutorial</a> </div>
+
     </React.Fragment>
   );
 }
@@ -84,7 +91,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className="button-history" onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
