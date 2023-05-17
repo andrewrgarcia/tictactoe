@@ -38,7 +38,6 @@ function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? "cat" : "dog");
   }
 
-
   return (
     <React.Fragment>
       <div className="status">Tic-Tac-<span role="img" aria-label="dog">🐶</span>*</div>
