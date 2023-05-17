@@ -22,9 +22,9 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = <span role="img" aria-label="cat">🐱</span> ;
+      nextSquares[i] = "🐱" ;
     } else {
-      nextSquares[i] = <span role="img" aria-label="dog">🐶</span>;
+      nextSquares[i] = "🐶";
     }
     onPlay(nextSquares);
   }
