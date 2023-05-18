@@ -22,7 +22,7 @@ function Board({ xIsNext, squares, onPlay }) {
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
-      nextSquares[i] = "🐱" ;
+      nextSquares[i] = "😸" ;
     } else {
       nextSquares[i] = "🐶";
     }
@@ -39,9 +39,10 @@ function Board({ xIsNext, squares, onPlay }) {
   }
 
   return (
-    <React.Fragment>
-      <div className="status">Tic-Tac-<span role="img" aria-label="dog">🐶</span>*</div>
-      <div className="status">{status}</div>
+  <React.Fragment>
+    <div className="title">Tic-Tac-<span role="img" aria-label="dog">🐶</span>*</div>
+    <div className="status">{status}</div>
+    <div className="board">
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -57,10 +58,9 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-      <div className="footer">*Adapted by <a href="https://github.com/andrewrgarcia">Andrew Garcia </a> 
-       from <a href="https://react.dev/learn/tutorial-tic-tac-toe">React Tutorial</a> </div>
-
-    </React.Fragment>
+    </div>
+    <div className="footer">*Adapted by <a href="https://github.com/andrewrgarcia">Andrew Garcia</a> from <a href="https://react.dev/learn/tutorial-tic-tac-toe">React Tutorial</a></div>
+  </React.Fragment>
   );
 }
 
