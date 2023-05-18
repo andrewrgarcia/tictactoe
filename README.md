@@ -1,3 +1,10 @@
+# andrewrgarcia/tictactoe "Tic-Tac-🐶"
+
+Adapted by <a href="https://github.com/andrewrgarcia">Andrew Garcia</a> from <a href="https://react.dev/learn/tutorial-tic-tac-toe">React Tutorial</a>. Click on the image below to play:
+
+<a href="https://tictactoe-eight-peach.vercel.app/"><img src="screenshot.png" style="width:100%"></a> 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
